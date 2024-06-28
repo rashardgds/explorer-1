@@ -2,6 +2,13 @@
   "name": "@explorer-1/vue",
   "private": false,
   "publishConfig": {
+    "exports": {
+      "./*": {
+        "types": "./*/*.d.ts",
+        "import": "./explorer-1-vue.js"
+      }
+    },
+    "directory": "dist",
     "access": "public"
   },
   "author": "DesignLab",
@@ -11,6 +18,15 @@
   },
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    "./components/**/*.vue": "./src/components/**/*.vue",
+    "./templates/**/*.vue": "./src/templates/**/*.vue",
+    "./store/**/*.ts": "./src/store/**/*.ts",
+    "./utils/**/*.js": "./src/utils/**/*.js",
+    "./utils/**/*.ts": "./src/utils/**/*.ts",
+    "./interfaces.ts": "./src/interfaces.ts",
+    "./*": "./*"
+  },
   "scripts": {
     "dev": "pnpm prepare && vite",
     "build": "pnpm prepare && vue-tsc && vite build",
@@ -37,6 +53,7 @@
     "tailwindcss": "^3.4.3",
     "twitter-widgets": "^2.0.0",
     "vue": "^3.4.21",
+    "vue-observe-visibility": "^1.0.0",
     "vue3-compare-image": "^1.2.5"
   },
   "devDependencies": {
