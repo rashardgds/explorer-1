@@ -42,10 +42,10 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // inject plugins
-    addPlugin(resolver.resolve(pluginDir, 'dayjs'))
-    addPlugin(resolver.resolve(pluginDir, 'filters'))
-    addPlugin(resolver.resolve(pluginDir, 'vue-click-outside'))
-    addPlugin(resolver.resolve(pluginDir, 'vue-compare-image.client'))
+    // addPlugin(resolver.resolve(pluginDir, 'dayjs'))
+    // addPlugin(resolver.resolve(pluginDir, 'filters'))
+    // addPlugin(resolver.resolve(pluginDir, 'vue-click-outside'))
+    // addPlugin(resolver.resolve(pluginDir, 'vue-compare-image.client'))
 
     if (options.includeStyles) {
       await installModule('@nuxtjs/tailwindcss', {
@@ -105,19 +105,18 @@ export default defineNuxtModule<ModuleOptions>({
         extensions: ['.vue']
       })
     }
-    if (options.includeStore) {
-      await installModule('@pinia/nuxt', {
-        autoImports: ['useThemeStore'],
-        storesDirs: ['./store/**', resolver.resolve(runtimeDir, 'store')]
-      })
-      addImportsSources({
-        from: '@explorer-1/vue/store/theme',
-        imports: ['useThemeStore']
-      })
-      addImportsSources({
-        from: '@explorer-1/vue/store/header',
-        imports: ['useHeaderStore']
-      })
-    }
+    // if (options.includeStore) {
+    //   await installModule('@pinia/nuxt', {
+    //     // storesDirs: ['./store/**', resolver.resolve(runtimeDir, 'store')]
+    //   })
+    //   // addImportsSources({
+    //   //   from: '@explorer-1/vue/store/theme',
+    //   //   imports: ['useThemeStore']
+    //   // })
+    //   // addImportsSources({
+    //   //   from: '@explorer-1/vue/store/header',
+    //   //   imports: ['useHeaderStore']
+    //   // })
+    // }
   }
 })
