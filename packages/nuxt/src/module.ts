@@ -93,7 +93,7 @@ export default defineNuxtModule<ModuleOptions>({
       })
     } // types
     addImportsSources({
-      from: '@explorer-1/vue/src/interfaces',
+      from: '@explorer-1/vue/interfaces',
       imports: ['ImageObject', 'Explorer1Theme']
     })
     if (options.includePageTemplates) {
@@ -111,11 +111,11 @@ export default defineNuxtModule<ModuleOptions>({
         storesDirs: ['./store/**', resolver.resolve(runtimeDir, 'store')]
       })
       addImportsSources({
-        from: '@explorer-1/vue/src/store/theme',
+        from: '@explorer-1/vue/store/theme',
         imports: ['useThemeStore']
       })
       addImportsSources({
-        from: '@explorer-1/vue/src/store/header',
+        from: '@explorer-1/vue/store/header',
         imports: ['useHeaderStore']
       })
     }

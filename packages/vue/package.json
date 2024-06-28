@@ -2,13 +2,6 @@
   "name": "@explorer-1/vue",
   "private": false,
   "publishConfig": {
-    "exports": {
-      "./*": {
-        "types": "./*/*.d.ts",
-        "import": "./explorer-1-vue.js"
-      }
-    },
-    "directory": "dist",
     "access": "public"
   },
   "author": "DesignLab",
@@ -19,13 +12,9 @@
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    "./components/**/*.vue": "./src/components/**/*.vue",
-    "./templates/**/*.vue": "./src/templates/**/*.vue",
-    "./store/**/*.ts": "./src/store/**/*.ts",
-    "./utils/**/*.js": "./src/utils/**/*.js",
-    "./utils/**/*.ts": "./src/utils/**/*.ts",
-    "./interfaces.ts": "./src/interfaces.ts",
-    "./*": "./*"
+    ".": {
+      "import": "./dist/explorer-1-vue.umd.cjs"
+    }
   },
   "scripts": {
     "dev": "pnpm prepare && vite",
@@ -40,6 +29,7 @@
   },
   "prettier": "@explorer-1/prettier-config",
   "dependencies": {
+    "@explorer-1/common": "workspace:*",
     "@fancyapps/ui": "^4.0.26",
     "@tailwindcss/forms": "^0.5.7",
     "animejs": "^3.2.2",
@@ -57,7 +47,6 @@
     "vue3-compare-image": "^1.2.5"
   },
   "devDependencies": {
-    "@explorer-1/common": "workspace:*",
     "@explorer-1/prettier-config": "workspace:*",
     "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.19",
