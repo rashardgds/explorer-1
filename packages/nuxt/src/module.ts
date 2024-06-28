@@ -107,14 +107,14 @@ export default defineNuxtModule<ModuleOptions>({
     }
     if (options.includeStore) {
       await installModule('@pinia/nuxt', {
-        storesDirs: ['./store/**', resolver.resolve(runtimeDir, 'store')]
+        storesDirs: ['./store/**']
       })
       addImportsSources({
-        from: '@explorer-1/vue/store/theme',
+        from: '@explorer-1/vue',
         imports: ['useThemeStore']
       })
       addImportsSources({
-        from: '@explorer-1/vue/store/header',
+        from: '@explorer-1/vue',
         imports: ['useHeaderStore']
       })
     }
